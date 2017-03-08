@@ -1,8 +1,24 @@
 <DOCTYPE HTML>
 <html>
     <head>
-        <title>JR</title>
+        <title>jrcabansag.com</title>
+        <link rel="icon" type="image/png" href="Icon.png" sizes="32x32" />
     </head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+                  $("#AboutMeButton").click(function(){
+                                           $('html, body').animate({
+                                                                   scrollTop: $("#AboutMe").offset().top
+                                                                   }, 300);
+                                           });
+                  $("#ProjectsButton").click(function(){
+                                            $('html, body').animate({
+                                                                    scrollTop: $("#Projects").offset().top
+                                                                    }, 300);
+                                            });
+                                            });
+    </script>
     <style type='text/css'>
         @font-face{
             font-family: BeyondTheMountains;
@@ -12,10 +28,13 @@
             font-family: LatoBoldItalic;
             src: url(LatoBoldItalic.ttf);
         }
-    @font-face{
-        font-family: LatoBold;
-        src: url(LatoBold.ttf);
-    }
+        @font-face{
+            font-family: LatoBold;
+            src: url(LatoBold.ttf);
+        }
+        html {
+            background-color: #E0E0E0;
+        }
         body{
             color: white;
             background-color: #3daeff;
@@ -39,8 +58,9 @@
         }
         #AboutMe{
             width: 100vw;
-            min-width:700px;
+            min-width:550px;
             height: 100vh;
+            min-height: 650px;
             max-height: 700px;
             background-image: url(WhiteGradient.png);
             background-repeat: repeat;
@@ -51,7 +71,7 @@
         }
         #AboutMeContents{
             position: relative;
-            width:100vw;
+            width:550px;
         }
         #AboutMeImage{
             display:inline-block;
@@ -59,6 +79,10 @@
             width: 300px;
             height: 300px;
             padding-bottom: -200px;
+            margin-top: 50px;
+        }
+        #AboutMeImage:hover{
+            -webkit-filter: brightness(103%);
         }
         #AboutMeText{
             display: inline-block;
@@ -76,28 +100,271 @@
             margin-left: 20px;
         }
         .AboutMeButton{
-            font-size: 14px;
+            font-size: 15px;
             font-family: LatoBold;
         }
         #ResumeButton:hover{
             color: #D2EDFF;
         }
+        #MenuBar{
+            background-color: rgba(255, 255, 255, 0.9);
+            width:100%;
+            min-width: 550px;
+            height: 60px;
+            position: fixed;
+            z-index: 500;
+            opacity 0.2;
+            display: flex;
+            align-items: center;
+        }
+    #LogoCircle{
+        margin-left: 30px;
+        border-radius: 50%;
+        background-color: rgba(49, 163, 234, 0.7);
+        width:40px;
+        height:40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        padding-top: 2px;
+        font-family: BeyondTheMountains;
+    }
+    #MenuButtons{
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    .MenuButton{
+        font-family: LatoBold;
+        font-size: 14px;
+        color: #7A7A7A;
+        padding-left: 9px;
+        padding-right: 6px;
+    }
+    .MenuButton:hover{
+        color: rgba(49, 163, 234, 0.7);
+    }
+    #HeaderContainer{
+        width:100%;
+        min-width: 550px;
+    }
+    .HeaderLine{
+        background-color:white;
+        width:38%;
+        height: 2px;
+        display:inline-block;
+        vertical-align:middle;
+    }
+    #Header{
+        font-family: LatoBold;
+        font-size: 16px;
+        display:inline-block;
+        margin-left:auto;
+        margin-right:auto;
+        padding-left:5px;
+        padding-right:5px;
+        vertical-align:middle;
+    }
+    #Projects{
+        width: 100%;
+        padding-top:50px;
+        padding-bottom:50px;
+    }
+    #ProjectBox{
+        width: 100%;
+        min-width: 550px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    #ProjectImage{
+        width:200px;
+        height:200px;
+        display:inline-block;
+        vertical-align: top;
+    }
+    #ProjectImageLight{
+        width:200px;
+        height:200px;
+        display:inline-block;
+        vertical-align: top;
+    }
+    #ProjectImage:hover{
+        -webkit-filter: brightness(105%);
+    }
+    #ProjectImageLight:hover{
+        -webkit-filter: brightness(103%);
+    }
+    #ProjectText{
+        display:inline-block;
+        vertical-align: top;
+        width: 500px;
+        margin-top: 20px;
+    }
+    #ProjectTitle{
+        font-family: BeyondTheMountains;
+        font-size: 40px;
+        display:inline-block;
+        vertical-align: top;
+        padding-bottom: 4px;
+    }
+    #ProjectFeatureLine{
+        width: 300px;
+        height: 1px;
+        display: block;
+        background-color:white;
+    }
+    #ProjectFeatureText{
+        font-family: LatoBoldItalic;
+        font-size: 16px;
+        display: block;
+        width: 500px;
+    }
+    #ProjectFeatureStar{
+        width:16px;
+        height: 16px;
+        padding-right: 7px;
+    }
+    #ProjectDescription{
+        font-family: LatoBoldItalic;
+        font-size: 16px;
+        text-align: left;
+        display:block;
+        margin-left: 15px;
+        margin-top: 3px;
+    }
     </style>
     <body>
+        <div id="MenuBar">
+            <div id="LogoCircle">JR</div>
+            <div id="MenuButtons">
+                <a class="MenuButton" id="AboutMeButton">ABOUT ME</a>
+                <a class="MenuButton" id="ProjectsButton">PROJECTS</a>
+                <!--<a href="www.youtube.com" class="MenuButton">AWARDS</a>
+                <a href="www.youtube.com" class="MenuButton">DESIGNS</a>
+                <a href="www.youtube.com" class="MenuButton">ETC</a>-->
+            </div>
+        </div>
         <div id="AboutMe">
             <center>
-            <div id="AboutMeContents">
-                <img id="AboutMeImage" class="Circular" src="Selfie.jpg">
-                <div id="AboutMeText">
-                    <h1 id="AboutMeTitle">My name is JR , and I like to code.</h1>
-                    <p id="AboutMeDesc">One of my favorite parts of Computer Science is how you can use it to code unique programs that can change the world. Over the years, I've developed several games, apps, and webpages with the hope that they could fix a widespread problem, or simply brighten someone's day.</p>
-                    <div id="AboutMeButtons">
-                        <span class="AboutMeButton" style="margin-left:-10px">MY EMAIL: CABANSAG@STANFORD.EDU</span>
-                        <a href="www.facebook.com" id="ResumeButton" class="AboutMeButton" style="margin-left:15px">MY RESUME</span>
+                <div id="AboutMeContents">
+                    <img id="AboutMeImage" class="Circular" src="Selfie.jpg">
+                    <div id="AboutMeText">
+                        <h1 id="AboutMeTitle">My name is JR , and I like to code.</h1>
+                        <p id="AboutMeDesc">One of my favorite parts of Computer Science is how you can use it to code unique programs that can change the world. Over the years, I've developed several games, apps, and webpages with the hope that they could fix a widespread problem, or simply brighten someone's day.</p>
+                        <div id="AboutMeButtons">
+                            <span class="AboutMeButton" style="margin-left:-10px">MY EMAIL: CABANSAG@STANFORD.EDU</span>
+                            <a href="http://jrcabansag.com/Resume.pdf" id="ResumeButton" class="AboutMeButton" style="margin-left:15px">MY RESUME</a>
+                        </div>
                     </div>
                 </div>
-            </div>
             </center>
+        </div>
+        <div id="HeaderContainer"><center>
+        <div class="HeaderLine"></div>
+        <div id="Header">MY PROJECTS</div>
+        <div class="HeaderLine"></div>
+        </center>
+        </div>
+        <div id="Projects">
+            <div id="ProjectBox">
+                <center>
+                <a target="_blank" href="https://itunes.apple.com/us/app/electribirds/id991566348?mt=8">
+                <img src="Electribirds.png" id="ProjectImageLight" class="Circular">
+                </a>
+                <div id="ProjectText">
+                    <div id="ProjectTitle">Electribirds</div>
+                    <div id="ProjectFeatureLine"></div>
+                    <div id="ProjectFeatureText"><img src="Star.png" id="ProjectFeatureStar">IN IOS APP STORE</div>
+                    <div id="ProjectFeatureLine"></div>
+                    <div id="ProjectDescription">When I was gifted an Apple laptop, the first thing I did was download XCode to learn how to create mobile apps. After weeks of late night coding with Swift and designing vector graphics with Adobe Illustrator, Electribirds was born. Check it out on the iOS app store!</div>
+                </div>
+                </center>
+            </div>
+            
+            <div id="ProjectBox">
+                <center>
+                    <a target="_blank" href="https://devpost.com/software/moonlens">
+                    <img src="MoonlensIcon.png" id="ProjectImage" class="Circular">
+                    </a>
+                        <div id="ProjectText">
+                            <div id="ProjectTitle">Moonlens</div>
+                            <div id="ProjectFeatureLine" style="width:450px"></div>
+                            <div id="ProjectFeatureText"><img src="Star.png" id="ProjectFeatureStar">TREEHACKS 2017 - VR GRAND PRIZE WINNER</div>
+                            <div id="ProjectFeatureLine" style="width:450px"></div>
+                            <div id="ProjectDescription">Me and my dorm-mates noticed that Virtual Reality was often too expensive. To fix that, we built Moonlens, which is a three-step platform that makes VR cheaper and more accessible. We built everything in just 36 hours. I made all the graphics and the mobile app for the probject.</div>
+                        </div>
+                </center>
+            </div>
+            
+            <div id="ProjectBox">
+                <center>
+                    <a target="_blank" href="http://tjpartnershipfund.org/2015/10/tj-students-are-computing-wizards/">
+                    <img src="Positivity.png" id="ProjectImage" class="Circular">
+                    </a>
+                        <div id="ProjectText">
+                            <div id="ProjectTitle">Positivity</div>
+                            <div id="ProjectFeatureLine" style="width:430px"></div>
+                            <div id="ProjectFeatureText"><img src="Star.png" id="ProjectFeatureStar">DCHACKS 2015 - BEST OVERALL APP WINNER</div>
+                            <div id="ProjectFeatureLine" style="width:430px"></div>
+                            <div id="ProjectDescription">I wanted to build a community for PTSD victims, so I created Positivity. It allows members to post uplifting messages and uses a system of upvotes to determine which posts are most effective. Users can choose to be notified if a post reaches a certain threshold of upvotes so that they never miss top posts.</div>
+                        </div>
+                </center>
+            </div>
+            
+            <div id="ProjectBox">
+                <center>
+                    <a target="_blank" href="https://devpost.com/software/zomblr">
+                    <img src="Zomblr.png" id="ProjectImage" class="Circular">
+                    </a>
+                        <div id="ProjectText">
+                            <div id="ProjectTitle">Zomblr</div>
+                            <div id="ProjectFeatureLine" style="width:410px"></div>
+                            <div id="ProjectFeatureText"><img src="Star.png" id="ProjectFeatureStar">HACKTJ 2015 - BEST DESIGNED MOBILE APP</div>
+                            <div id="ProjectFeatureLine" style="width:410px"></div>
+                            <div id="ProjectDescription">Sometimes finding the motivation to run can be difficult, but not when you’re getting chased by zombies. In this social network, your “followers” are out for your blood, so when they run, you have to run too!</div>
+                        </div>
+                        </center>
+            </div>
+            
+            <div id="ProjectBox">
+                <center>
+                    <a target="_blank" href="https://docs.google.com/document/d/1x5lfu2Mhc9Dopvg1YpcBAMlXCOEyLqeJwSkQBhmrzu8/edit">
+                    <img src="ComputerEyes.png" id="ProjectImage" class="Circular">
+                    </a>
+                        <div id="ProjectText">
+                            <div id="ProjectTitle">Computer Eyes</div>
+                            <div id="ProjectFeatureLine" style="width:450px"></div>
+                            <div id="ProjectFeatureText"><img src="Star.png" id="ProjectFeatureStar">RESEARCH IN TJHSST COMPUTER SYSTEMS LAB</div>
+                            <div id="ProjectFeatureLine" style="width:450px"></div>
+                            <div id="ProjectDescription">Over the course of a year, I created software that would allow a user to control a computer using only their eyes. I used the Tobii EyeX eyetracker and C++ to develop a program that completely overrode the computer mouse - making computing more accessible for those with limited mobility, and more sanitary as well.</div>
+                        </div>
+                        </center>
+            </div>
+            
+            <div id="ProjectBox">
+                <center>
+                    <a target="_blank" href="http://jrcabansag.com/penguintag/">
+                    <img src="PenguinTag.png" id="ProjectImageLight" class="Circular">
+                    </a>
+                        <div id="ProjectText">
+                            <div id="ProjectTitle">Penguin Tag</div>
+                            <div id="ProjectDescription">One day, I was showering and suddenly came up with the game concept of Penguins having a snowball fight. After several days of coding and designing graphics, I finished Penguin Tag, the first two-player game I've ever made!</div>
+                        </div>
+                        </center>
+            </div>
+
+            <div id="ProjectBox">
+                <center>
+                    <a target="_blank" href="http://jrcabansag.com/pigfeeder/">
+                    <img src="PigFeeder.png" id="ProjectImageLight" class="Circular">
+                    </a>
+                        <div id="ProjectText">
+                            <div id="ProjectTitle">Pig Feeder</div>
+                            <div id="ProjectDescription">I've always found pigs very cute, and so I created my most pointless webpage to date - Pig Feeder. If you've always had a strong urge to feed a digital pig some carrots, then look no further!</div>
+                        </div>
+                        </center>
+            </div>
+
         </div>
     </body>
 </html>
