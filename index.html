@@ -3,7 +3,101 @@
     <head>
         <title>JR</title>
     </head>
+    <style type='text/css'>
+        @font-face{
+            font-family: BeyondTheMountains;
+            src: url(BeyondTheMountains.otf);
+        }
+        @font-face{
+            font-family: LatoBoldItalic;
+            src: url(LatoBoldItalic.ttf);
+        }
+    @font-face{
+        font-family: LatoBold;
+        src: url(LatoBold.ttf);
+    }
+        body{
+            color: white;
+            background-color: #3daeff;
+            background-image: url(TransparentPattern.png);
+            margin: 0px;
+        }
+        h1{
+            font-family: BeyondTheMountains;
+            margin-bottom: 0px;
+        }
+        p{
+            font-family: LatoBoldItalic;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .Circular{
+            border-radius: 50%;
+            border: white solid 3px;
+        }
+        #AboutMe{
+            width: 100vw;
+            min-width:700px;
+            height: 100vh;
+            max-height: 700px;
+            background-image: url(WhiteGradient.png);
+            background-repeat: repeat;
+            background-size: 100% 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #AboutMeContents{
+            position: relative;
+            width:100vw;
+        }
+        #AboutMeImage{
+            display:inline-block;
+            vertical-align: top;
+            width: 300px;
+            height: 300px;
+            padding-bottom: -200px;
+        }
+        #AboutMeText{
+            display: inline-block;
+            margin-top: 10px;
+        }
+        #AboutMeTitle{
+            font-size: 40px;
+            width: 550px;
+            display: block;
+        }
+        #AboutMeDesc{
+            width: 530px;
+            display: block;
+            text-align: left;
+            margin-left: 20px;
+        }
+        .AboutMeButton{
+            font-size: 14px;
+            font-family: LatoBold;
+        }
+        #ResumeButton:hover{
+            color: #D2EDFF;
+        }
+    </style>
     <body>
-        
+        <div id="AboutMe">
+            <center>
+            <div id="AboutMeContents">
+                <img id="AboutMeImage" class="Circular" src="Selfie.jpg">
+                <div id="AboutMeText">
+                    <h1 id="AboutMeTitle">My name is JR , and I like to code.</h1>
+                    <p id="AboutMeDesc">One of my favorite parts of Computer Science is how you can use it to code unique programs that can change the world. Over the years, I've developed several games, apps, and webpages with the hope that they could fix a widespread problem, or simply brighten someone's day.</p>
+                    <div id="AboutMeButtons">
+                        <span class="AboutMeButton" style="margin-left:-10px">MY EMAIL: CABANSAG@STANFORD.EDU</span>
+                        <a href="www.facebook.com" id="ResumeButton" class="AboutMeButton" style="margin-left:15px">MY RESUME</span>
+                    </div>
+                </div>
+            </div>
+            </center>
+        </div>
     </body>
 </html>
