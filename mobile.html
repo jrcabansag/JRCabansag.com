@@ -1,0 +1,530 @@
+<DOCTYPE HTML>
+<html>
+    <head>
+        <title>jrcabansag.com</title>
+        <link rel="icon" type="image/png" href="JRFavicon.png?" sizes="96x96"/>
+    </head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#AboutMeButton").click(function(){
+                $('html, body').animate({
+                    scrollTop: $("#AboutMe").offset().top
+                }, 300);
+            });
+            $("#ProjectsButton").click(function(){
+                $('html, body').animate({
+                    scrollTop: $("#Projects").offset().top
+                }, 300);
+            });
+            $("#LogoCircle").click(function(){
+                $('html, body').animate({
+                    scrollTop: $("#Intro").offset().top
+                }, 300);
+            });
+        });
+    </script>
+    <script src="mobile-detect.js"></script>
+    <script>
+        var md = new MobileDetect(window.navigator.userAgent);
+        if(md.mobile() == null){
+           window.location.replace("http://jrcabansag.com");
+        }
+    </script>
+    <style type='text/css'>
+    @font-face{
+        font-family: Cocogoose;
+        src: url(Cocogoose.ttf);
+    }
+    @font-face{
+        font-family: BeyondTheMountains;
+        src: url(BeyondTheMountains.otf);
+    }
+    @font-face{
+        font-family: LatoBoldItalic;
+        src: url(LatoBoldItalic.ttf);
+    }
+    @font-face{
+        font-family: LatoBold;
+        src: url(LatoBold.ttf);
+    }
+    @font-face{
+        font-family: LatoRegular;
+        src: url(LatoRegular.ttf);
+    }
+    html {
+        background-color: white;
+    }
+    body{
+        color: #404040;
+        margin: 0px;
+        text-align: middle;
+    }
+    h1{
+        font-family: LatoBold;
+        margin-bottom: 0px;
+    }
+    p{
+        font-family: LatoRegular;
+    }
+    a{
+        text-decoration: none;
+        color:#404040;
+    }
+    .CircleImageShadow{
+        border-radius: 50%;
+        height: 400px;
+        width: 400px;
+        background-size: cover;
+        margin-top: 70px;
+    }
+    .Circular{
+        border-radius: 50%;
+        z-index: 0px;
+    }
+    #Intro{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #IntroBox{
+        background-size: cover;
+        background-image: url("YellowTubes.png");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90vw;
+        height: 18.5vw;
+        margin-top: -64px;
+        z-index: -10;
+    }
+    #IntroText{
+        font-family: Cocogoose;
+        margin-top: 6px;
+        font-size: 9vw;
+        letter-spacing: 3px;
+    }
+    #AboutMe{
+        width: 100vw;
+        min-width:550px;
+        background: linear-gradient(#FFF8A9, #FFF387);
+        background-size: 100% 100%;
+        padding-top: 140px;
+        padding-bottom: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #AboutMeContents{
+        margin-top: 70px;
+        padding-top: 50px;
+        position: relative;
+    }
+    #AboutMeImage{
+        width: 500px;
+        height: 500px;
+    }
+    #AboutMeTextWrapper{
+        display: inline-block;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #AboutMeText{
+        
+    }
+    #AboutMeTitle{
+        font-size: 40px;
+        width: 550px;
+        display: block;
+        letter-spacing: 4px;
+        margin-top: 60px;
+    }
+    #AboutMeDesc{
+        width: 70vw;
+        display: block;
+        text-align: left;
+        margin-left: 20px;
+        font-size: 30px;
+    }
+    .AboutIcon{
+        width: 125px;
+        height: 125px;
+        background-size: cover;
+        border-radius: 125px;
+        margin-left: 40px;
+        margin-top: 10px;
+    }
+    .IconImageContainer{
+        width: 127px;
+        height: 127px;
+        text-align: center;
+    }
+    .IconContainer{
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        font-family: LatoBold;
+        font-size: 24px;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        width: 200px;
+        margin-top: 10px;
+        padding-bottom: 30px;
+    }
+    .IconLink{
+        text-align: center;
+    }
+    .IconText{
+        text-align: center;
+        margin-top: 20px;
+        padding-bottom: 10px;
+    }
+    #MailIcon{
+        background-image: url(MailIcon.png);
+    }
+    #ResumeIcon{
+        background-image: url(ResumeIcon.png);
+    }
+    #LinkedInIcon{
+        background-image: url(LinkedInIcon.png);
+    }
+    #Polaroid{
+        margin-top: -70px;
+        display:inline-block;
+        vertical-align: top;
+        background-color: white;
+        width:500px;
+        height: 500px;
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 90px;
+    }
+    #ResumeButton:hover{
+        color: #D2EDFF;
+    }
+    #MenuBar{
+        position: fixed;
+        background-color: white;
+        width:100%;
+        min-width: 550px;
+        height: 160px;
+        z-index: 500;
+        opacity 0.2;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #FAFAFA;
+        border-bottom: 1px solid #FAFAFA;
+    }
+    #LogoCircle{
+        margin-left: 30px;
+        border-radius: 50%;
+        background-color: #FFFAA0;
+        width:120px;
+        height:120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+        padding-top: 2px;
+        padding-left: 2px;
+        font-family: Cocogoose;
+        letter-spacing: 4px;
+        color: #404040;
+    }
+    #MenuButtons{
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    .MenuButton{
+        font-family: LatoBold;
+        font-size: 24px;
+        letter-spacing: 4px;
+        color: #515151;
+        padding-left: 12px;
+        padding-right: 9px;
+    }
+    #HeaderContainer{
+        background-color: white;
+        width:100%;
+        min-width: 550px;
+    }
+    .HeaderLine{
+        background-color:white;
+        width:38%;
+        height: 2px;
+        display:inline-block;
+        vertical-align:middle;
+    }
+    #Header{
+        background-color: white;
+        font-family: LatoBold;
+        font-size: 16px;
+        display:inline-block;
+        margin-left:auto;
+        margin-right:auto;
+        padding-left:5px;
+        padding-right:5px;
+        vertical-align:middle;
+    }
+    #Projects{
+        background-color: white;
+        width: 100%;
+        padding-top:50px;
+        padding-bottom:50px;
+    }
+    .ProjectBox{
+        width: 100%;
+        min-width: 550px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .ProjectImage{
+        width:200px;
+        height:200px;
+        display:inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
+    }
+    .ProjectImageLight{
+        width:200px;
+        height:200px;
+    }
+    .ProjectImage:hover{
+        -webkit-filter: brightness(105%);
+    }
+    .ProjectImageLight:hover{
+        -webkit-filter: brightness(103%);
+    }
+    .ProjectText{
+        width: 80vw;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .ProjectTitle{
+        font-family: LatoBold;
+        font-size: 40px;
+        text-transform: uppercase;
+        display:inline-block;
+        vertical-align: top;
+        letter-spacing: 4px;
+        margin-top: 60px;
+    }
+    .ProjectFeatureLine{
+        width: 400px;
+        height: 10px;
+        border-radius: 10px;
+        display: block;
+        background-color: #FFF9AE;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    .ProjectFeatureText{
+        font-family: LatoBold;
+        font-size: 12px;
+        letter-spacing: 3.2px;
+        margin-top: 20px;
+        display: block;
+    }
+    .ProjectFeatureStar{
+        width:16px;
+        height: 16px;
+        padding-right: 7px;
+        display: none;
+    }
+    .ProjectDescription{
+        font-family: LatoRegular;
+        font-size: 14px;
+        text-align: left;
+        display:block;
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+    .ProjectImageWrap{
+        display:inline-block;
+        vertical-align: top;
+        width: 410px;
+        height: 410px;
+    }
+    #ProjectsHeader{
+        text-align: center;
+        vertical-align: middle;
+        width: 400px;
+        height: 60px;
+        background: linear-gradient(#FFF8A9, #FFF387);
+        font-family: LatoBold;
+        font-size: 40px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        padding-top: 10px;
+        margin-top: 130px;
+        margin-bottom: 40px;
+    }
+    </style>
+    <body>
+        <div id="MenuBar">
+            <div id="LogoCircle">JR</div>
+            <div id="MenuButtons">
+                <a class="MenuButton" id="AboutMeButton">ABOUT ME</a>
+                <a class="MenuButton" id="ProjectsButton">PROJECTS</a>
+            </div>
+        </div>
+        <div id="Intro">
+            <div id="IntroBox">
+                <span id="IntroText">JR CABANSAG</span>
+            </div>
+        </div>
+        <div id="AboutMe">
+            <center>
+                <div id="AboutMeContents">
+                    <div id="Polaroid"><img id="AboutMeImage" src="RoyalPavilion.jpg"></div>
+                    <div id="AboutMeTextWrapper"
+                        <div id="AboutMeText">
+                            <h1 id="AboutMeTitle">ABOUT ME</h1>
+                            <p id="AboutMeDesc">Nice to meet you! I'm JR, and I'm a sophomore studying CS at Stanford University. One of my favorite parts of Computer Science is how you can use it to code unique programs that can change the world. Over the years, I've developed several games, apps, and webpages with the hope that they could fix a widespread problem, or simply brighten someone's day.</p>
+                            <div id="AboutMeButtons">
+                                <a href="mailto:cabansag@stanford.edu" class="IconLink"><div class="IconContainer">
+                                    <div class="IconImageContainer"><div id="MailIcon" class="AboutIcon"></div></div>
+                                    <div class="IconText">Email</div>
+                                </div>
+                                </a>
+                                <a href="http://jrcabansag.com/Resume.pdf" class="IconLink">
+                                    <div class="IconContainer">
+                                        <div class="IconImageContainer"><div id="ResumeIcon" class="AboutIcon"></div></div>
+                                        <div class="IconText">Resume</div>
+                                    </div>
+                                </a>
+                                <a href="https://www.linkedin.com/in/reynaldo-cabansag-8b0859149/" class="IconLink">
+                                <div class="IconContainer">
+                                    <div class="IconImageContainer"><div id="LinkedInIcon" class="AboutIcon"></div></div>
+                                    <div class="IconText">LinkedIn</div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
+        </div>
+        <div id="Projects">
+            <center>
+            <div id="ProjectsHeader">Projects</div></center>
+            <div class="ProjectBox">
+                <center>
+                <div class="ProjectImageWrap">
+                <a target="_blank" href="https://itunes.apple.com/us/app/electribirds/id991566348?mt=8">
+                <div class="CircleImageShadow" style="background-image: url(Electribirds.png);">
+                </div>
+                </a>
+                </div>
+                <div class="ProjectText">
+                    <div class="ProjectTitle">Electribirds</div>
+                    <div class="ProjectFeatureLine"></div>
+                    <div class="ProjectFeatureText"><img src="Star.png" class="ProjectFeatureStar">IN IOS APP STORE</div>
+                    <div class="ProjectDescription">When I was gifted an Apple laptop, the first thing I did was download XCode to learn how to create mobile apps. After weeks of late night coding with Swift and designing vector graphics with Adobe Illustrator, Electribirds was born. Check it out on the iOS app store!</div>
+                </div>
+                </center>
+            </div>
+            
+            <div class="ProjectBox">
+                <center>
+                    <div class="ProjectImageWrap">
+                    <a target="_blank" href="https://docs.google.com/document/d/1x5lfu2Mhc9Dopvg1YpcBAMlXCOEyLqeJwSkQBhmrzu8/edit">
+                    <div class="CircleImageShadow" style="background-image: url(ComputerEyes.png);">
+                    </div>
+                     </a>
+                     </div>
+                    <div class="ProjectText">
+                        <div class="ProjectTitle">Computer Eyes</div>
+                        <div class="ProjectFeatureLine"></div>
+                        <div class="ProjectFeatureText"><img src="Star.png" class="ProjectFeatureStar">RESEARCH IN TJHSST COMPUTER SYSTEMS LAB</div>
+                        <div class="ProjectDescription">Over the course of a year, I created software that would allow a user to control a computer using only their eyes. I used the Tobii EyeX eyetracker and C++ to develop a program that completely overrode the computer mouse - making computing more accessible for those with limited mobility, and more sanitary as well.</div>
+                    </div>
+                </center>
+            </div>
+
+            <div class="ProjectBox">
+                <center>
+                    <div class="ProjectImageWrap">
+                    <a target="_blank" href="https://devpost.com/software/moonlens">
+                    <div class="CircleImageShadow" style="background-image: url(MoonlensIcon.png);"></div>
+                    </a>
+                    </div>
+                        <div class="ProjectText">
+                            <div class="ProjectTitle">Moonlens</div>
+                            <div class="ProjectFeatureLine"></div>
+                            <div class="ProjectFeatureText"><img src="Star.png" class="ProjectFeatureStar">STANFORD TREEHACKS 2017 - VR GRAND PRIZE WINNER</div>                            
+                            <div class="ProjectDescription">Me and my dorm-mates noticed that Virtual Reality was often too expensive. To fix that, we built Moonlens, which is a three-step platform that makes VR cheaper and more accessible. We built everything in just 36 hours. I made all the graphics and the mobile app for the project.</div>
+                        </div>
+                </center>
+            </div>
+            
+            <div class="ProjectBox">
+                <center>
+                    <div class="ProjectImageWrap">
+                    <a target="_blank" href="http://tjpartnershipfund.org/2015/10/tj-students-are-computing-wizards/">
+                    <div class="CircleImageShadow" style="background-image: url(Positivity.png);"></div>
+                    </a>
+                    </div>
+                        <div class="ProjectText">
+                            <div class="ProjectTitle">Positivity</div>
+                            <div class="ProjectFeatureLine"></div>
+                            <div class="ProjectFeatureText"><img src="Star.png" class="ProjectFeatureStar">DCHACKS 2015 - BEST OVERALL APP WINNER</div>
+                            <div class="ProjectDescription">I wanted to build a community for PTSD victims, so I created Positivity. It allows members to post uplifting messages and uses a system of upvotes to determine which posts are most effective. Users can choose to be notified if a post reaches a certain threshold of upvotes so that they never miss top posts.</div>
+                        </div>
+                </center>
+            </div>
+            
+            <div class="ProjectBox">
+                <center>
+                    <div class="ProjectImageWrap">
+                    <a target="_blank" href="https://devpost.com/software/zomblr">
+                    <div class="CircleImageShadow" style="background-image: url(Zomblr.png);"></div>
+                    </a>
+                    </div>
+                        <div class="ProjectText">
+                            <div class="ProjectTitle">Zomblr</div>
+                            <div class="ProjectFeatureLine"></div>
+                            <div class="ProjectFeatureText"><img src="Star.png" class="ProjectFeatureStar">HACKTJ 2015 - BEST DESIGNED APP WINNER</div>
+                            <div class="ProjectDescription">Sometimes finding the motivation to run can be difficult, but not when you're getting chased by zombies. In this social network, your 'followers' are out for your blood, so when they run, you have to run too!</div>
+                        </div>
+                        </center>
+            </div>
+            
+            <div class="ProjectBox">
+                <center>
+                    <div class="ProjectImageWrap">
+                    <a target="_blank" href="http://jrcabansag.com/penguintag/">
+                    <div class="CircleImageShadow" style="background-image: url(PenguinTag.png);"></div>
+                    </a>
+                    </div>
+                        <div class="ProjectText">
+                            <div class="ProjectTitle">Penguin Tag</div>
+                            <div class="ProjectFeatureLine"></div>
+                            <div class="ProjectDescription">One day, I was showering and suddenly came up with the game concept of Penguins having a snowball fight. After several days of coding and designing graphics, I finished Penguin Tag, the first two-player game I've ever made!</div>
+                        </div>
+                        </center>
+            </div>
+
+            <div class="ProjectBox">
+                <center>
+                    <div class="ProjectImageWrap">
+                    <a target="_blank" href="http://jrcabansag.com/pigfeeder/">
+                    <div class="CircleImageShadow" style="background-image: url(PigFeeder.png);"></div>
+                    </a>
+                    </div>
+                        <div class="ProjectText">
+                            <div class="ProjectTitle">Pig Feeder</div>
+                            <div class="ProjectFeatureLine"></div>
+                            <div class="ProjectDescription">I've always found pigs very cute, and so I created my most pointless webpage to date - Pig Feeder. If you've always had a strong urge to feed a digital pig some carrots, then look no further!</div>
+                        </div>
+                        </center>
+            </div>
+        </div>
+    </body>
+</html>
