@@ -1,10 +1,12 @@
-<DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
     <head>
         <title>jrcabansag.com</title>
-        <link rel="icon" type="image/png" href="JRFavicon.png?" sizes="96x96"/>
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
     </head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css"> <!-- Resource style -->
     <script type="text/javascript" src="skrollr.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -24,13 +26,36 @@
                 }, 300);
             });
             var s = skrollr.init();
+            $(window).scroll(function () {
+                if ($(window).scrollTop()+$(window).height()/2 > $('#AboutMe').offset().top && $(window).scrollTop()+$(window).height()/2 < $("#Projects").offset().top) {
+                    $("#AboutMeButton").css("color","#F2DE5F");
+                } else {
+                    $("#AboutMeButton").css("color","");
+                }
+                if ($(window).scrollTop()+$(window).height()/2 > $('#Projects').offset().top) {
+                    $("#ProjectsButton").css("color","#F2DE5F");
+                } else {
+                    $("#ProjectsButton").css("color","");
+                }
+            });
         });
     </script>
     <script src="mobile-detect.js"></script>
     <script>
+        var photoIndex = -1;
         var md = new MobileDetect(window.navigator.userAgent);
         if(md.mobile() != null){
             window.location.replace("http://jrcabansag.com/mobile.html");
+        }
+        function changePhoto(){
+            photoIndex += 1;
+            var photoNumber = photoIndex%5+1;
+            var nextPhotoNumber = photoNumber+1;
+            if(nextPhotoNumber > 5){
+                nextPhotoNumber = 1;
+            }
+            $('#AboutMeImage'+photoNumber).fadeOut(250);
+            $('#AboutMeImage'+nextPhotoNumber).fadeIn(300);
         }
     </script>
     <style type='text/css'>
@@ -61,6 +86,7 @@
         color: #404040;
         margin: 0px;
         height: calc(100% - 100vh);
+        min-width:650px;
     }
     h1{
         font-family: LatoBold;
@@ -90,7 +116,7 @@
         z-index: 0px;
     }
     #Intro{
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         display: flex;
         align-items: center;
@@ -103,61 +129,94 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 617px;
-        height: 127px;
+        width: 650px;
+        height: 134px;
         margin-top: -64px;
         z-index: -10;
     }
-    #IntroText{
+    #CenterIntroText{
+        align-items: center;
+        justify-content: center;
+    }
+    .IntroText{
         font-family: Cocogoose;
-        margin-top: 6px;
-        font-size: 64px;
-        letter-spacing: 3px;
+        font-size: 68px;
+        letter-spacing: 2px;
+        margin-top: -59px;
+    }
+    #IntroText1{
+        margin-left: -270px;
+    }
+    #IntroText2{
+        margin-left: -240px;
+    }
+    #IntroText3{
+        margin-left: -200px;
     }
     #AboutMe{
-        width: 100vw;
-        min-width:550px;
+        width: 100%;
         height: 100vh;
         min-height: 800px;
         background: linear-gradient(#FFF8A9, #FFF387);
         background-size: 100% 100%;
-        padding-top: 50px;
+        padding-top: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
     #AboutMeContents{
-        margin-top: 70px;
-        padding-top: 50px;
         position: relative;
     }
-    #AboutMeImage{
+    .AboutMeImage{
+        cursor: pointer;
+        position: absolute;
+        left: 20px;
+        top: 20px;
         width: 300px;
         height: 300px;
     }
     #AboutMeTextWrapper{
         display: inline-block;
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
     #AboutMeText{
         
+    }
+    #AboutMeImage1{
+        z-index: 50;
+    }
+    #AboutMeImage2{
+        z-index: 40;
+    }
+    #AboutMeImage3{
+        z-index: 30;
+    }
+    #AboutMeImage4{
+        z-index: 20;
+    }
+    #AboutMeImage5{
+        z-index: 10;
     }
     #AboutMeTitle{
         font-size: 20px;
         width: 550px;
         display: block;
         letter-spacing: 2px;
-        margin-top: 20px;
+        margin-top: 35px;
     }
     #AboutMeDesc{
         width: 530px;
         display: block;
         text-align: left;
         margin-left: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 30px;
     }
     .AboutMeButton{
         font-size: 15px;
+        margin-top: 20px;
         font-family: LatoBold;
     }
     .AboutIcon{
@@ -208,10 +267,16 @@
     #LinkedInIcon{
         background-image: url(LinkedInIcon.png);
     }
-    #Polaroid{
-        margin-top: -70px;
+    #PolaroidWrapper{
+        margin-top: -40px;
         display:inline-block;
         vertical-align: top;
+        padding-left: 30px;
+        padding-right: 30px;
+        cursor: pointer;
+    }
+    #Polaroid{
+        position: relative;
         background-color: white;
         width:300px;
         height: 300px;
@@ -226,7 +291,7 @@
     #MenuBar{
         background-color: white;
         width:100%;
-        min-width: 550px;
+        min-width:650px;
         height: 60px;
         z-index: 500;
         opacity 0.2;
@@ -234,6 +299,8 @@
         align-items: center;
         border-top: 1px solid #FAFAFA;
         border-bottom: 1px solid #FAFAFA;
+        right: 0px;
+        left: 0px;
     }
     #LogoCircle{
         margin-left: 30px;
@@ -244,12 +311,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 16px;
-        padding-top: 2px;
+        font-size: 18px;
+        padding-top: 0px;
         padding-left: 2px;
         font-family: Cocogoose;
-        letter-spacing: 1.5px;;
+        letter-spacing: 0.8px;
         color: #404040;
+        cursor: pointer;
     }
     #MenuButtons{
         margin-left: auto;
@@ -265,6 +333,7 @@
     }
     .MenuButton:hover{
         color: #F2DE5F;
+        cursor: pointer;
     }
     #HeaderContainer{
         background-color: white;
@@ -376,7 +445,6 @@
         vertical-align: middle;
         width: 200px;
         height: 30px;
-        background: linear-gradient(#FFF8A9, #FFF387);
         font-family: LatoBold;
         font-size: 20px;
         letter-spacing: 2px;
@@ -384,15 +452,25 @@
         padding-top: 6px;
         margin-top: 40px;
         margin-bottom: 40px;
+        border-radius: 30px;
     }
     </style>
     <body>
         <div id="Intro">
             <div id="IntroBox">
-                <span id="IntroText">JR CABANSAG</span>
+                <section class="cd-intro">
+        <h1 class="cd-headline letters rotate-2">
+            <span id="CenterIntroText" class="cd-words-wrapper">
+                <b id="IntroText1" class="IntroText is-visible">JR&nbsp;CABANSAG</b>
+                <b id="IntroText2" class="IntroText">DEVELOPER</b>
+                <b id="IntroText3" class="IntroText">DESIGNER</b>
+            </span>
+        </h1>
+    </section> 
+                
             </div>
         </div>
-        <div id="MenuBar" data--1-top="position: absolute; margin-top: 0px" data--2-top="position: fixed; margin-top: -100vh">
+        <div id="MenuBar" data--1-top="position: absolute; margin-top: 0px;" data--2-top="position: fixed; margin-top: -100vh">
             <div id="LogoCircle">JR</div>
             <div id="MenuButtons">
                 <a class="MenuButton" id="AboutMeButton">ABOUT ME</a>
@@ -402,8 +480,9 @@
         <div id="AboutMe">
             <center>
                 <div id="AboutMeContents">
-                    <div id="Polaroid" data-top-top="box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.10)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0)"><img id="AboutMeImage" src="RoyalPavilion.jpg"></div>
-                    <div id="AboutMeTextWrapper"
+                    <div id="PolaroidWrapper" onClick="changePhoto()">
+                    <div id="Polaroid" data-top-top="box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.10)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0)"><img id="AboutMeImage1" class="AboutMeImage" src="RoyalPavilion.jpg"><img id="AboutMeImage2" class="AboutMeImage" src="Beach.png"><img id="AboutMeImage3" class="AboutMeImage" src="Madrid.png"><img id="AboutMeImage4" class="AboutMeImage" src="Rainy.png"><img id="AboutMeImage5" class="AboutMeImage" src="Pina.png"></div></div>
+                    <div id="AboutMeTextWrapper">
                         <div id="AboutMeText">
                             <h1 id="AboutMeTitle">ABOUT ME</h1>
                             <p id="AboutMeDesc">Nice to meet you! I'm JR, and I'm a sophomore studying CS at Stanford University. One of my favorite parts of Computer Science is how you can use it to code unique programs that can change the world. Over the years, I've developed several games, apps, and webpages with the hope that they could fix a widespread problem, or simply brighten someone's day.</p>
@@ -434,7 +513,7 @@
         </div>
         <div id="Projects">
             <center>
-            <div id="ProjectsHeader" data-top-top="box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);">Projects</div></center>
+            <div id="ProjectsHeader" data-top-top="box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);">&#60;&nbsp;&#47;&nbsp;Projects&nbsp;&#62;</div></center>
             <div class="ProjectBox" data-center-top="opacity: 1" data-bottom-top="opacity: 1">
                 <center>
                 <div class="ProjectImageWrap">
@@ -547,5 +626,7 @@
                         </center>
             </div>
         </div>
+        <script src="jquery-2.1.1.js"></script>
+        <script src="main.js"></script> <!-- Resource jQuery -->
     </body>
 </html>
