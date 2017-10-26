@@ -1,631 +1,213 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>jrcabansag.com</title>
-        <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+        <title>JR Cabansag</title>
+        <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
     </head>
-    <script src="jquery-2.1.1.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css"> <!-- Resource style -->
-    <script type="text/javascript" src="skrollr.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#AboutMeButton").click(function(){
-                $('html, body').animate({
-                    scrollTop: $("#AboutMe").offset().top
-                }, 300);
-            });
-            $("#ProjectsButton").click(function(){
-                $('html, body').animate({
-                    scrollTop: $("#Projects").offset().top
-                }, 300);
-            });
-            $("#LogoCircle").click(function(){
-                $('html, body').animate({
-                    scrollTop: $("#Intro").offset().top
-                }, 300);
-            });
-            var s = skrollr.init();
-            $(window).scroll(function () {
-                if ($(window).scrollTop()+$(window).height()/2 > $('#AboutMe').offset().top && $(window).scrollTop()+$(window).height()/2 < $("#Projects").offset().top) {
-                    $("#AboutMeButton").css("color","#F2DE5F");
-                } else {
-                    $("#AboutMeButton").css("color","");
-                }
-                if ($(window).scrollTop()+$(window).height()/2 > $('#Projects').offset().top) {
-                    $("#ProjectsButton").css("color","#F2DE5F");
-                } else {
-                    $("#ProjectsButton").css("color","");
-                }
-            });
-        });
-    </script>
-    <script src="mobile-detect.js"></script>
-    <script>
-        var photoIndex = -1;
-        var md = new MobileDetect(window.navigator.userAgent);
-        if(md.mobile() != null){
-            window.location.replace("http://jrcabansag.com/mobile.html");
-        }
-        function changePhoto(){
-            photoIndex += 1;
-            var photoNumber = photoIndex%5+1;
-            var nextPhotoNumber = photoNumber+1;
-            if(nextPhotoNumber > 5){
-                nextPhotoNumber = 1;
-            }
-            $('#AboutMeImage'+photoNumber).fadeOut(250);
-            $('#AboutMeImage'+nextPhotoNumber).fadeIn(300);
-        }
-    </script>
-    <style type='text/css'>
-    @font-face{
-        font-family: Cocogoose;
-        src: url(Cocogoose.ttf);
-    }
-    @font-face{
-        font-family: BeyondTheMountains;
-        src: url(BeyondTheMountains.otf);
-    }
-    @font-face{
-        font-family: LatoBoldItalic;
-        src: url(LatoBoldItalic.ttf);
-    }
-    @font-face{
-        font-family: LatoBold;
-        src: url(LatoBold.ttf);
-    }
-    @font-face{
-        font-family: LatoRegular;
-        src: url(LatoRegular.ttf);
-    }
-    html {
-        background-color: white;
-    }
-    body{
-        color: #404040;
-        margin: 0px;
-        height: calc(100% - 100vh);
-        min-width:650px;
-    }
-    h1{
-        font-family: LatoBold;
-        margin-bottom: 0px;
-    }
-    p{
-        font-family: LatoRegular;
-    }
-    a{
-        text-decoration: none;
-        color:#404040;
-    }
-    .CircleImageShadow{
-        display:inline-block;
-        vertical-align: top;
-        border-radius: 50%;
-        height: 200px;
-        width: 200px;
-        background-size: cover;
-    }
-    .CircleImageShadow:hover{
-        height:202px;
-        width: 202px;
-    }
-    .Circular{
-        border-radius: 50%;
-        z-index: 0px;
-    }
-    #Intro{
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #IntroBox{
-        position: fixed;
-        background-size: cover;
-        background-image: url("YellowTubes.png");
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 650px;
-        height: 134px;
-        margin-top: -64px;
-        z-index: -10;
-    }
-    #CenterIntroText{
-        align-items: center;
-        justify-content: center;
-    }
-    .IntroText{
-        font-family: Cocogoose;
-        font-size: 68px;
-        letter-spacing: 2px;
-        margin-top: -59px;
-    }
-    #IntroText1{
-        margin-left: -270px;
-    }
-    #IntroText2{
-        margin-left: -240px;
-    }
-    #IntroText3{
-        margin-left: -200px;
-    }
-    #AboutMe{
-        width: 100%;
-        height: 100vh;
-        min-height: 800px;
-        background: linear-gradient(#FFF8A9, #FFF387);
-        background-size: 100% 100%;
-        padding-top: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #AboutMeContents{
-        position: relative;
-    }
-    .AboutMeImage{
-        cursor: pointer;
-        position: absolute;
-        left: 20px;
-        top: 20px;
-        width: 300px;
-        height: 300px;
-    }
-    #AboutMeTextWrapper{
-        display: inline-block;
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-    #AboutMeText{
-        
-    }
-    #AboutMeImage1{
-        z-index: 50;
-    }
-    #AboutMeImage2{
-        z-index: 40;
-    }
-    #AboutMeImage3{
-        z-index: 30;
-    }
-    #AboutMeImage4{
-        z-index: 20;
-    }
-    #AboutMeImage5{
-        z-index: 10;
-    }
-    #AboutMeTitle{
-        font-size: 20px;
-        width: 550px;
-        display: block;
-        letter-spacing: 2px;
-        margin-top: 35px;
-    }
-    #AboutMeDesc{
-        width: 530px;
-        display: block;
-        text-align: left;
-        margin-left: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-top: 30px;
-    }
-    .AboutMeButton{
-        font-size: 15px;
-        margin-top: 20px;
-        font-family: LatoBold;
-    }
-    .AboutIcon{
-        width: 50px;
-        height: 50px;
-        background-size: cover;
-        border-radius: 50px;
-        margin:auto;
-    }
-    .IconImageContainer{
-        width: 64px;
-        height: 64px;
-        text-align: center;
-    }
-    .IconContainer{
-        margin-left: auto;
-        margin-right: auto;
-        display: inline-block;
-        vertical-align: top;
-        text-align: center;
-        font-family: LatoBold;
-        font-size: 12px;
-        letter-spacing: 1.6px;
-        text-transform: uppercase;
-        width: 80px;
-        margin-top: 10px;
-        padding-bottom: 30px;
-    }
-    .IconLink{
-        text-align: center;
-    }
-    .AboutIcon:hover{
-        width: 51px;
-        height: 51px;
-    }
-    .IconText{
-        text-align: center;
-        margin-left:-12px;
-        margin-top: -5px;
-        padding-bottom: 10px;
-    }
-    #MailIcon{
-        background-image: url(MailIcon.png);
-    }
-    #ResumeIcon{
-        background-image: url(ResumeIcon.png);
-    }
-    #LinkedInIcon{
-        background-image: url(LinkedInIcon.png);
-    }
-    #PolaroidWrapper{
-        margin-top: -40px;
-        display:inline-block;
-        vertical-align: top;
-        padding-left: 30px;
-        padding-right: 30px;
-        cursor: pointer;
-    }
-    #Polaroid{
-        position: relative;
-        background-color: white;
-        width:300px;
-        height: 300px;
-        padding-top: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 70px;
-    }
-    #ResumeButton:hover{
-        color: #D2EDFF;
-    }
-    #MenuBar{
-        background-color: white;
-        width:100%;
-        min-width:650px;
-        height: 60px;
-        z-index: 500;
-        opacity 0.2;
-        display: flex;
-        align-items: center;
-        border-top: 1px solid #FAFAFA;
-        border-bottom: 1px solid #FAFAFA;
-        right: 0px;
-        left: 0px;
-    }
-    #LogoCircle{
-        margin-left: 30px;
-        border-radius: 50%;
-        background-color: #FFFAA0;
-        width:40px;
-        height:40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        padding-top: 0px;
-        padding-left: 2px;
-        font-family: Cocogoose;
-        letter-spacing: 0.8px;
-        color: #404040;
-        cursor: pointer;
-    }
-    #MenuButtons{
-        margin-left: auto;
-        margin-right: 30px;
-    }
-    .MenuButton{
-        font-family: LatoBold;
-        font-size: 12px;
-        letter-spacing: 1.6px;
-        color: #515151;
-        padding-left: 9px;
-        padding-right: 6px;
-    }
-    .MenuButton:hover{
-        color: #F2DE5F;
-        cursor: pointer;
-    }
-    #HeaderContainer{
-        background-color: white;
-        width:100%;
-        min-width: 550px;
-    }
-    .HeaderLine{
-        background-color:white;
-        width:38%;
-        height: 2px;
-        display:inline-block;
-        vertical-align:middle;
-    }
-    #Header{
-        background-color: white;
-        font-family: LatoBold;
-        font-size: 16px;
-        display:inline-block;
-        margin-left:auto;
-        margin-right:auto;
-        padding-left:5px;
-        padding-right:5px;
-        vertical-align:middle;
-    }
-    #Projects{
-        background-color: white;
-        width: 100%;
-        padding-top:50px;
-        padding-bottom:50px;
-    }
-    .ProjectBox{
-        width: 100%;
-        min-width: 550px;
-        padding-top: 25px;
-        padding-bottom: 45px;
-    }
-    .ProjectImage{
-        width:200px;
-        height:200px;
-        display:inline-block;
-        vertical-align: middle;
-        margin-left: 5px;
-    }
-    .ProjectImageLight{
-        width:200px;
-        height:200px;
-    }
-    .ProjectImage:hover{
-        -webkit-filter: brightness(105%);
-    }
-    .ProjectImageLight:hover{
-        -webkit-filter: brightness(103%);
-    }
-    .ProjectText{
-        display:inline-block;
-        vertical-align: top;
-        width: 500px;
-        margin-top: 20px;
-        margin-left: 10px;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-    .ProjectTitle{
-        font-family: LatoBold;
-        font-size: 20px;
-        text-transform: uppercase;
-        display:inline-block;
-        vertical-align: top;
-        letter-spacing: 2px;
-    }
-    .ProjectFeatureLine{
-        width: 300px;
-        height: 5px;
-        border-radius: 10px;
-        display: block;
-        background-color: #FFF9AE;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    .ProjectFeatureText{
-        font-family: LatoBold;
-        font-size: 12px;
-        letter-spacing: 1.6px;
-        display: block;
-        width: 500px;
-    }
-    .ProjectFeatureStar{
-        width:16px;
-        height: 16px;
-        padding-right: 7px;
-        display: none;
-    }
-    .ProjectDescription{
-        font-family: LatoRegular;
-        font-size: 14px;
-        text-align: left;
-        display:block;
-        margin-left: 15px;
-        margin-top: 11px;
-    }
-    .ProjectImageWrap{
-        display:inline-block;
-        vertical-align: top;
-        width: 210px;
-        height: 210px;
-    }
-    #ProjectsHeader{
-        text-align: center;
-        vertical-align: middle;
-        width: 200px;
-        height: 30px;
-        font-family: LatoBold;
-        font-size: 20px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        padding-top: 6px;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        border-radius: 30px;
-    }
-    </style>
+
+
+
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/title-animate.js"></script>
+    <script src="js/skrollr.min.js"></script>
+    <script src="js/website-animate.js"></script>
+    <script src="js/mobile-detect.js"></script>
+    <script src="js/mobile-redirect.js"></script>
+
+
+
+    <link rel="stylesheet" href="css/title-animate.css">
+    <link rel="stylesheet" href="css/website-style.css">
+
+
+
     <body>
         <div id="Intro">
             <div id="IntroBox">
                 <section class="cd-intro">
-        <h1 class="cd-headline letters rotate-2">
-            <span id="CenterIntroText" class="cd-words-wrapper">
-                <b id="IntroText1" class="IntroText is-visible">JR&nbsp;CABANSAG</b>
-                <b id="IntroText2" class="IntroText">DEVELOPER</b>
-                <b id="IntroText3" class="IntroText">DESIGNER</b>
-            </span>
-        </h1>
-    </section> 
-                
+                <h1 class="cd-headline letters rotate-2">
+                    <span id="IntroTextWrapper" class="cd-words-wrapper">
+                        <b id="IntroText1" class="IntroText is-visible">JR&nbsp;Cabansag</b>
+                        <b id="IntroText2" class="IntroText">Developer</b>
+                        <b id="IntroText3" class="IntroText">Designer</b>
+                    </span>
+                </h1>
+                </section> 
             </div>
         </div>
+
+
         <div id="MenuBar" data--1-top="position: absolute; margin-top: 0px;" data--2-top="position: fixed; margin-top: -100vh">
             <div id="LogoCircle">JR</div>
-            <div id="MenuButtons">
-                <a class="MenuButton" id="AboutMeButton">ABOUT ME</a>
-                <a class="MenuButton" id="ProjectsButton">PROJECTS</a>
+            <div id="MenuButtonWrapper">
+                <a class="MenuButton" id="AboutMeButton">About Me</a>
+                <a class="MenuButton" id="ProjectsButton">Projects</a>
             </div>
         </div>
+
+
         <div id="AboutMe">
             <center>
                 <div id="AboutMeContents">
                     <div id="PolaroidWrapper" onClick="changePhoto()">
-                    <div id="Polaroid" data-top-top="box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.10)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0)"><img id="AboutMeImage1" class="AboutMeImage" src="RoyalPavilion.jpg"><img id="AboutMeImage2" class="AboutMeImage" src="Beach.png"><img id="AboutMeImage3" class="AboutMeImage" src="Madrid.png"><img id="AboutMeImage4" class="AboutMeImage" src="Rainy.png"><img id="AboutMeImage5" class="AboutMeImage" src="Pina.png"></div></div>
+                        <div id="Polaroid" data-top-top="box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.10)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0)">
+                            <img id="AboutMeImage1" class="AboutMeImage" src="img/RoyalPavilion.jpg">
+                            <img id="AboutMeImage2" class="AboutMeImage" src="img/Beach.png">
+                            <img id="AboutMeImage3" class="AboutMeImage" src="img/Madrid.png">
+                            <img id="AboutMeImage4" class="AboutMeImage" src="img/Rainy.png">
+                            <img id="AboutMeImage5" class="AboutMeImage" src="img/Pina.png">
+                        </div>
+                    </div>
                     <div id="AboutMeTextWrapper">
-                        <div id="AboutMeText">
-                            <h1 id="AboutMeTitle">ABOUT ME</h1>
-                            <p id="AboutMeDesc">Nice to meet you! I'm JR, and I'm a sophomore studying CS at Stanford University. One of my favorite parts of Computer Science is how you can use it to code unique programs that can change the world. Over the years, I've developed several games, apps, and webpages with the hope that they could fix a widespread problem, or simply brighten someone's day.</p>
-                            <div id="AboutMeButtons">
-                                <a href="mailto:cabansag@stanford.edu" class="IconLink"><div class="IconContainer">
-                                    <div class="IconImageContainer"><div id="MailIcon" class="AboutIcon" data-top-top="box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.10)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0)"></div></div>
-                                    <div class="IconText">Email</div>
+                        <h1 id="AboutMeTitle">About Me</h1>
+                        <p id="AboutMeDescription">Nice to meet you! I'm JR, and I'm a sophomore studying CS at Stanford University. One of my favorite parts of Computer Science is how you can use it to code unique programs that can change the world. Over the years, I've developed several games, apps, and webpages with the hope that they could fix a widespread problem, or simply brighten someone's day.</p>
+                        <div id="AboutMeButtons">
+                            <a href="mailto:cabansag@stanford.edu" class="AboutIconLink"><div class="AboutIconWrapper">
+                                <div class="AboutIconImageWrapper">
+                                    <div class="AboutIconImage" data-top-top="box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.10)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(img/MailIcon.png)"></div>
                                 </div>
-                                </a>
-                                <a href="http://jrcabansag.com/Resume.pdf" class="IconLink">
-                                    <div class="IconContainer">
-                                        <div class="IconImageContainer"><div id="ResumeIcon" class="AboutIcon" data-top-top="box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.10)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0)"></div></div>
-                                        <div class="IconText">Resume</div>
-                                    </div>
-                                </a>
-                                <a href="https://www.linkedin.com/in/reynaldo-cabansag-8b0859149/" class="IconLink">
-                                <div class="IconContainer">
-                                    <div class="IconImageContainer"><div id="LinkedInIcon" class="AboutIcon" data-top-top="box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.10)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0)"></div></div>
-                                    <div class="IconText">LinkedIn</div>
-                                </div>
-                                </a>
+                                <div class="AboutIconText">Email</div>
                             </div>
+                            </a>
+                            <a href="http://jrcabansag.com/Resume.pdf" class="AboutIconLink">
+                                <div class="AboutIconWrapper">
+                                    <div class="AboutIconImageWrapper">
+                                        <div class="AboutIconImage" data-top-top="box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.10)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(img/ResumeIcon.png)"></div>
+                                    </div>
+                                    <div class="AboutIconText">Resume</div>
+                                </div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/reynaldo-cabansag-8b0859149/" class="AboutIconLink">
+                                <div class="AboutIconWrapper">
+                                    <div class="AboutIconImageWrapper">
+                                        <div class="AboutIconImage" data-top-top="box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.10)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(img/LinkedInIcon.png)"></div>
+                                    </div>
+                                    <div class="AboutIconText">LinkedIn</div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </center>
         </div>
-        </div>
+
+
         <div id="Projects">
             <center>
-            <div id="ProjectsHeader" data-top-top="box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0)" data-bottom-top="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);">&#60;&nbsp;&#47;&nbsp;Projects&nbsp;&#62;</div></center>
-            <div class="ProjectBox" data-center-top="opacity: 1" data-bottom-top="opacity: 1">
+                <div id="ProjectsHeader">&#60;&nbsp;&#47;&nbsp;Projects&nbsp;&#62;</div>
+            </center>
+
+            <div class="ProjectBox">
                 <center>
-                <div class="ProjectImageWrap">
-                <a target="_blank" href="https://itunes.apple.com/us/app/electribirds/id991566348?mt=8">
-                <div class="CircleImageShadow" data-top-top="box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.18)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0);" style="background-image: url(Electribirds.png);">
-                </div>
-                </a>
-                </div>
-                <div class="ProjectText">
-                    <div class="ProjectTitle">Electribirds</div>
-                    <div class="ProjectFeatureLine"></div>
-                    <div class="ProjectFeatureText"><img src="Star.png" class="ProjectFeatureStar">IN IOS APP STORE</div>
-                    <div class="ProjectDescription">When I was gifted an Apple laptop, the first thing I did was download XCode to learn how to create mobile apps. After weeks of late night coding with Swift and designing vector graphics with Adobe Illustrator, Electribirds was born. Check it out on the iOS app store!</div>
-                </div>
+                    <div class="ProjectImageWrapper">
+                        <a target="_blank" href="https://itunes.apple.com/us/app/electribirds/id991566348?mt=8">
+                            <div class="ProjectImage" data-top-top="box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.18)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0);" style="background-image: url(img/Electribirds.png);">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="ProjectTextWrapper">
+                        <div class="ProjectTitle">Electribirds</div>
+                        <div class="ProjectFeatureLine"></div>
+                        <div class="ProjectFeatureText">In iOS App Store</div>
+                        <div class="ProjectDescription">When I was gifted an Apple laptop, the first thing I did was download XCode to learn how to create mobile apps. After weeks of late night coding with Swift and designing vector graphics with Adobe Illustrator, Electribirds was born. Check it out on the iOS app store!</div>
+                    </div>
                 </center>
             </div>
             
-            <div class="ProjectBox" data-center-top="opacity: 1" data-bottom-top="opacity: 1">
+            <div class="ProjectBox">
                 <center>
-                    <div class="ProjectImageWrap">
-                    <a target="_blank" href="https://docs.google.com/document/d/1x5lfu2Mhc9Dopvg1YpcBAMlXCOEyLqeJwSkQBhmrzu8/edit">
-                    <div class="CircleImageShadow" data-top-top="box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.5)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(ComputerEyes.png);">
+                    <div class="ProjectImageWrapper">
+                        <a target="_blank" href="https://docs.google.com/document/d/1x5lfu2Mhc9Dopvg1YpcBAMlXCOEyLqeJwSkQBhmrzu8/edit">
+                            <div class="ProjectImage" data-top-top="box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.5)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(img/ComputerEyes.png);">
+                            </div>
+                         </a>
                     </div>
-                     </a>
-                     </div>
-                    <div class="ProjectText">
+                    <div class="ProjectTextWrapper">
                         <div class="ProjectTitle">Computer Eyes</div>
                         <div class="ProjectFeatureLine"></div>
-                        <div class="ProjectFeatureText"><img src="Star.png" class="ProjectFeatureStar">RESEARCH IN TJHSST COMPUTER SYSTEMS LAB</div>
+                        <div class="ProjectFeatureText">RESEARCH IN TJHSST COMPUTER SYSTEMS LAB</div>
                         <div class="ProjectDescription">Over the course of a year, I created software that would allow a user to control a computer using only their eyes. I used the Tobii EyeX eyetracker and C++ to develop a program that completely overrode the computer mouse - making computing more accessible for those with limited mobility, and more sanitary as well.</div>
                     </div>
                 </center>
             </div>
 
-            <div class="ProjectBox" data-center-top="opacity: 1" data-bottom-top="opacity: 1">
+            <div class="ProjectBox">
                 <center>
-                    <div class="ProjectImageWrap">
-                    <a target="_blank" href="https://devpost.com/software/moonlens">
-                    <div class="CircleImageShadow" data-top-top="box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.5)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(MoonlensIcon.png);"></div>
-                    </a>
+                    <div class="ProjectImageWrapper">
+                        <a target="_blank" href="https://devpost.com/software/moonlens">
+                            <div class="ProjectImage" data-top-top="box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.5)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(img/MoonlensIcon.png);"></div>
+                        </a>
                     </div>
-                        <div class="ProjectText">
-                            <div class="ProjectTitle">Moonlens</div>
-                            <div class="ProjectFeatureLine"></div>
-                            <div class="ProjectFeatureText"><img src="Star.png" class="ProjectFeatureStar">STANFORD TREEHACKS 2017 - VR GRAND PRIZE WINNER</div>                            
-                            <div class="ProjectDescription">Me and my dorm-mates noticed that Virtual Reality was often too expensive. To fix that, we built Moonlens, which is a three-step platform that makes VR cheaper and more accessible. We built everything in just 36 hours. I made all the graphics and the mobile app for the project.</div>
-                        </div>
+                    <div class="ProjectTextWrapper">
+                        <div class="ProjectTitle">Moonlens</div>
+                        <div class="ProjectFeatureLine"></div>
+                        <div class="ProjectFeatureText">STANFORD TREEHACKS 2017 - VR GRAND PRIZE WINNER</div>                            
+                        <div class="ProjectDescription">Me and my dorm-mates noticed that Virtual Reality was often too expensive. To fix that, we built Moonlens, which is a three-step platform that makes VR cheaper and more accessible. We built everything in just 36 hours. I made all the graphics and the mobile app for the project.</div>
+                    </div>
                 </center>
             </div>
             
             <div class="ProjectBox" data-center-top="opacity: 1" data-bottom-top="opacity: 1">
                 <center>
-                    <div class="ProjectImageWrap">
-                    <a target="_blank" href="http://tjpartnershipfund.org/2015/10/tj-students-are-computing-wizards/">
-                    <div class="CircleImageShadow" data-top-top="box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.18)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(Positivity.png);"></div>
-                    </a>
+                    <div class="ProjectImageWrapper">
+                        <a target="_blank" href="http://tjpartnershipfund.org/2015/10/tj-students-are-computing-wizards/">
+                            <div class="ProjectImage" data-top-top="box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.18)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(img/Positivity.png);"></div>
+                        </a>
                     </div>
-                        <div class="ProjectText">
-                            <div class="ProjectTitle">Positivity</div>
-                            <div class="ProjectFeatureLine"></div>
-                            <div class="ProjectFeatureText"><img src="Star.png" class="ProjectFeatureStar">DCHACKS 2015 - BEST OVERALL APP WINNER</div>
-                            <div class="ProjectDescription">I wanted to build a community for PTSD victims, so I created Positivity. It allows members to post uplifting messages and uses a system of upvotes to determine which posts are most effective. Users can choose to be notified if a post reaches a certain threshold of upvotes so that they never miss top posts.</div>
-                        </div>
+                    <div class="ProjectTextWrapper">
+                        <div class="ProjectTitle">Positivity</div>
+                        <div class="ProjectFeatureLine"></div>
+                        <div class="ProjectFeatureText">DCHACKS 2015 - BEST OVERALL APP WINNER</div>
+                        <div class="ProjectDescription">I wanted to build a community for PTSD victims, so I created Positivity. It allows members to post uplifting messages and uses a system of upvotes to determine which posts are most effective. Users can choose to be notified if a post reaches a certain threshold of upvotes so that they never miss top posts.</div>
+                    </div>
                 </center>
             </div>
             
             <div class="ProjectBox" data-center-top="opacity: 1" data-bottom-top="opacity: 1">
                 <center>
-                    <div class="ProjectImageWrap">
-                    <a target="_blank" href="https://devpost.com/software/zomblr">
-                    <div class="CircleImageShadow" data-top-top="box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.18)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(Zomblr.png);"></div>
-                    </a>
+                    <div class="ProjectImageWrapper">
+                        <a target="_blank" href="https://devpost.com/software/zomblr">
+                            <div class="ProjectImage" data-top-top="box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.18)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(img/Zomblr.png);"></div>
+                        </a>
                     </div>
-                        <div class="ProjectText">
-                            <div class="ProjectTitle">Zomblr</div>
-                            <div class="ProjectFeatureLine"></div>
-                            <div class="ProjectFeatureText"><img src="Star.png" class="ProjectFeatureStar">HACKTJ 2015 - BEST DESIGNED APP WINNER</div>
-                            <div class="ProjectDescription">Sometimes finding the motivation to run can be difficult, but not when you're getting chased by zombies. In this social network, your 'followers' are out for your blood, so when they run, you have to run too!</div>
-                        </div>
-                        </center>
+                    <div class="ProjectTextWrapper">
+                        <div class="ProjectTitle">Zomblr</div>
+                        <div class="ProjectFeatureLine"></div>
+                        <div class="ProjectFeatureText">HACKTJ 2015 - BEST DESIGNED APP WINNER</div>
+                        <div class="ProjectDescription">Sometimes finding the motivation to run can be difficult, but not when you're getting chased by zombies. In this social network, your 'followers' are out for your blood, so when they run, you have to run too!</div>
+                    </div>
+                </center>
             </div>
             
             <div class="ProjectBox" data-center-top="opacity: 1" data-bottom-top="opacity: 1">
                 <center>
-                    <div class="ProjectImageWrap">
-                    <a target="_blank" href="http://jrcabansag.com/penguintag/">
-                    <div class="CircleImageShadow" data-top-top="box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.18)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(PenguinTag.png);"></div>
-                    </a>
+                    <div class="ProjectImageWrapper">
+                        <a target="_blank" href="http://jrcabansag.com/penguintag/">
+                            <div class="ProjectImage" data-top-top="box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.18)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(img/PenguinTag.png);"></div>
+                        </a>
                     </div>
-                        <div class="ProjectText">
-                            <div class="ProjectTitle">Penguin Tag</div>
-                            <div class="ProjectFeatureLine"></div>
-                            <div class="ProjectDescription">One day, I was showering and suddenly came up with the game concept of Penguins having a snowball fight. After several days of coding and designing graphics, I finished Penguin Tag, the first two-player game I've ever made!</div>
-                        </div>
-                        </center>
+                    <div class="ProjectTextWrapper">
+                        <div class="ProjectTitle">Penguin Tag</div>
+                        <div class="ProjectFeatureLine"></div>
+                        <div class="ProjectDescription">One day, I was showering and suddenly came up with the game concept of Penguins having a snowball fight. After several days of coding and designing graphics, I finished Penguin Tag, the first two-player game I've ever made!</div>
+                    </div>
+                </center>
             </div>
 
             <div class="ProjectBox" data-center-top="opacity: 1" data-bottom-top="opacity: 1">
                 <center>
-                    <div class="ProjectImageWrap">
-                    <a target="_blank" href="http://jrcabansag.com/pigfeeder/">
-                    <div class="CircleImageShadow" data-center-top="box-shadow: inset 5px 5px 3px -1px rgba(0, 0, 0, 0.09)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(PigFeeder.png);"></div>
-                    </a>
+                    <div class="ProjectImageWrapper">
+                        <a target="_blank" href="http://jrcabansag.com/pigfeeder/">
+                            <div class="ProjectImage" data-center-top="box-shadow: inset 5px 5px 3px -1px rgba(0, 0, 0, 0.09)" data-bottom-top="box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0)" style="background-image: url(img/PigFeeder.png);"></div>
+                        </a>
                     </div>
-                        <div class="ProjectText">
-                            <div class="ProjectTitle">Pig Feeder</div>
-                            <div class="ProjectFeatureLine"></div>
-                            <div class="ProjectDescription">I've always found pigs very cute, and so I created my most pointless webpage to date - Pig Feeder. If you've always had a strong urge to feed a digital pig some carrots, then look no further!</div>
-                        </div>
-                        </center>
+                    <div class="ProjectTextWrapper">
+                        <div class="ProjectTitle">Pig Feeder</div>
+                        <div class="ProjectFeatureLine"></div>
+                        <div class="ProjectDescription">I've always found pigs very cute, and so I created my most pointless webpage to date - Pig Feeder. If you've always had a strong urge to feed a digital pig some carrots, then look no further!</div>
+                    </div>
+                </center>
             </div>
         </div>
-        <script src="main.js"></script> <!-- Resource jQuery -->
     </body>
 </html>

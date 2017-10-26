@@ -1,0 +1,331 @@
+@font-face{
+    font-family: Cocogoose;
+    src: url("../font/Cocogoose.ttf");
+}
+@font-face{
+    font-family: LatoBold;
+    src: url("../font/LatoBold.ttf");
+}
+@font-face{
+    font-family: LatoRegular;
+    src: url("../font/LatoRegular.ttf");
+}
+html {
+    background-color: white;
+}
+body{
+    color: #404040;
+    margin: 0px;
+    height: calc(100% - 100vh);
+    min-width:650px;
+}
+h1{
+    font-family: LatoBold;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+p{
+    font-family: LatoRegular;
+}
+a{
+    text-decoration: none;
+    color:#404040;
+}
+
+
+#Intro{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#IntroBox{
+    position: fixed;
+    background-size: cover;
+    background-image: url("../img/YellowTubes.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 650px;
+    height: 134px;
+    margin-top: -64px;
+    z-index: -10;
+}
+#IntroTextWrapper{
+    align-items: center;
+    justify-content: center;
+}
+.IntroText{
+    font-family: Cocogoose;
+    font-size: 68px;
+    letter-spacing: 2px;
+    margin-top: -59px;
+    text-transform: uppercase;
+}
+#IntroText1{
+    margin-left: -270px;
+}
+#IntroText2{
+    margin-left: -240px;
+}
+#IntroText3{
+    margin-left: -200px;
+}
+
+
+#MenuBar{
+    background-color: white;
+    width:100%;
+    min-width:650px;
+    height: 60px;
+    z-index: 500;
+    opacity 0.2;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #FAFAFA;
+    border-bottom: 1px solid #FAFAFA;
+    right: 0px;
+    left: 0px;
+}
+#LogoCircle{
+    margin-left: 30px;
+    border-radius: 50%;
+    background-color: #FFFAA0;
+    width:40px;
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    padding-top: 0px;
+    padding-left: 2px;
+    font-family: Cocogoose;
+    letter-spacing: 0.8px;
+    color: #404040;
+    cursor: pointer;
+}
+#MenuButtonWrapper{
+    margin-left: auto;
+    margin-right: 30px;
+}
+.MenuButton{
+    font-family: LatoBold;
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    color: #515151;
+    padding-left: 9px;
+    padding-right: 6px;
+    text-transform: uppercase;
+}
+.MenuButton:hover{
+    color: #F2DE5F;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+#AboutMe{
+    width: 100%;
+    height: 100vh;
+    min-height: 800px;
+    background: linear-gradient(#FFF8A9, #FFF387);
+    background-size: 100% 100%;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#AboutMeContents{
+    position: relative;
+}
+#PolaroidWrapper{
+    margin-top: -40px;
+    display:inline-block;
+    vertical-align: top;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+}
+#Polaroid{
+    position: relative;
+    background-color: white;
+    width:300px;
+    height: 300px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 70px;
+}
+.AboutMeImage{
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 300px;
+    height: 300px;
+}
+#AboutMeImage1{
+    z-index: 50;
+}
+#AboutMeImage2{
+    z-index: 40;
+}
+#AboutMeImage3{
+    z-index: 30;
+}
+#AboutMeImage4{
+    z-index: 20;
+}
+#AboutMeImage5{
+    z-index: 10;
+}
+#AboutMeTextWrapper{
+    display: inline-block;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+#AboutMeTitle{
+    font-size: 20px;
+    width: 550px;
+    display: block;
+    letter-spacing: 2px;
+    margin-top: 35px;
+}
+#AboutMeDescription{
+    width: 530px;
+    display: block;
+    text-align: left;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 30px;
+}
+.AboutIconWrapper{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    font-family: LatoBold;
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    width: 80px;
+    margin-top: 10px;
+    padding-bottom: 30px;
+}
+.AboutIconImageWrapper{
+    width: 64px;
+    height: 64px;
+    text-align: center;
+}
+.AboutIconImage{
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    border-radius: 50px;
+    margin:auto;
+}
+.AboutIconImage:hover{
+    width: 51px;
+    height: 51px;
+}
+.AboutIconLink{
+    text-align: center;
+}
+.AboutIconText{
+    text-align: center;
+    margin-left:-12px;
+    margin-top: -5px;
+    padding-bottom: 10px;
+}
+
+
+#Projects{
+    background-color: white;
+    width: 100%;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+#ProjectsHeader{
+    text-align: center;
+    vertical-align: middle;
+    width: 200px;
+    height: 30px;
+    font-family: LatoBold;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-top: 6px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 30px;
+}
+.ProjectBox{
+    width: 100%;
+    min-width: 550px;
+    padding-top: 25px;
+    padding-bottom: 45px;
+}
+.ProjectImageWrapper{
+    display:inline-block;
+    vertical-align: top;
+    width: 210px;
+    height: 210px;
+}
+.ProjectImage{
+    display:inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+}
+.ProjectImage:hover{
+    height:202px;
+    width: 202px;
+    margin-top: -1px;
+}
+.ProjectTextWrapper{
+    display:inline-block;
+    vertical-align: top;
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.ProjectTitle{
+    font-family: LatoBold;
+    font-size: 20px;
+    text-transform: uppercase;
+    display:inline-block;
+    vertical-align: top;
+    letter-spacing: 2px;
+}
+.ProjectFeatureText{
+    font-family: LatoBold;
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    display: block;
+    width: 500px;
+    text-transform: uppercase;
+}
+.ProjectFeatureLine{
+    width: 300px;
+    height: 5px;
+    border-radius: 10px;
+    display: block;
+    background-color: #FFF9AE;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.ProjectDescription{
+    font-family: LatoRegular;
+    font-size: 14px;
+    text-align: left;
+    display:block;
+    margin-left: 15px;
+    margin-top: 11px;
+}
