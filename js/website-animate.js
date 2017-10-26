@@ -1,10 +1,9 @@
 $(window).load(function(){
-    window.setTimeout(function(){$('#Loader').fadeOut(500)}, 300);
+    $('#Loader').fadeOut(500);
+    var s = skrollr.init();
 });
 
 $(document).ready(function(){
-    var s = skrollr.init();
-
     $("#AboutMeButton").click(function(){
         $('html, body').animate({
             scrollTop: $("#AboutMe").offset().top
