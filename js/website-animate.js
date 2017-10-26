@@ -1,3 +1,7 @@
+$(window).load(function(){
+    $('#Loader').fadeOut(1000);
+});
+
 $(document).ready(function(){
     var s = skrollr.init();
 
