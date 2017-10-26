@@ -1,5 +1,6 @@
 $(window).load(function(){
-    $('#Loader').fadeOut(500);
+    $('#Loader').fadeOut(1000);
+    initHeadline();
 });
 
 $(document).ready(function(){

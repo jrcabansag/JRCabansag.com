@@ -1,6 +1,7 @@
 $(window).load(function(){
-    $('#Loader').fadeOut(500);
+    $('#Loader').fadeOut(1000);
     var s = skrollr.init();
+    initHeadline();
 });
 
 $(document).ready(function(){
