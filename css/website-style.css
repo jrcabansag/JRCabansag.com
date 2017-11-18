@@ -71,31 +71,29 @@ a{
     position: fixed;
     background-size: cover;
     background-image: url("../img/YellowTubes.png");
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -70%); 
     width: 650px;
     height: 134px;
-    margin-top: -64px;
     z-index: -100;
 }
 #IntroHeadline{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
 }
 #IntroTextWrapper{
-    display: flex;
     align-items: center;
     justify-content: center;
+    margin: auto;
 }
 .IntroText{
     font-family: Cocogoose;
-    font-size: 68px;
+    font-size: 64px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-top: 3px;
-    margin-left: 7px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -152,11 +150,10 @@ a{
 
 #AboutMe{
     width: 100%;
-    height: 100vh;
-    min-height: 800px;
+    min-height: 100vh;
     background: linear-gradient(#FFF8A9, #FFF387);
     background-size: 100% 100%;
-    padding-top: 40px;
+    padding-top: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -238,7 +235,6 @@ a{
     text-transform: uppercase;
     width: 80px;
     margin-top: 20px;
-    padding-bottom: 30px;
 }
 .AboutIconImageWrapper{
     width: 64px;
@@ -263,7 +259,6 @@ a{
     text-align: center;
     margin-left:-12px;
     margin-top: -5px;
-    padding-bottom: 10px;
 }
 
 

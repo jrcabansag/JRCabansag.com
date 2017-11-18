@@ -53,27 +53,21 @@ Primary style
   max-width: 768px;
   text-align: center;
 }
-
-.cd-intro {
-}
-
 .cd-headline {
   font-size: 3rem;
   line-height: 1.2;
 }
-
 .cd-words-wrapper {
-  display: inline-block;
-  position: absolute;
-  text-align: left;
+  height: 100%;
 }
 .cd-words-wrapper b {
-  display: inline-block;
-  position: absolute;
+  position: fixed;
   white-space: nowrap;
+  left: 50%;
+  top: 50%;
+  transform: translate(-48%, -48%);
 }
 .cd-words-wrapper b.is-visible {
-  position: absolute;
 }
 .no-js .cd-words-wrapper b {
   opacity: 0;
