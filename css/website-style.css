@@ -31,6 +31,9 @@ a{
     text-decoration: none;
     color:#404040;
 }
+b{
+    font-family: LatoBold;
+}
 
 
 #Loader{
@@ -271,7 +274,7 @@ a{
 #ProjectsHeader{
     text-align: center;
     vertical-align: middle;
-    width: 200px;
+    width: 400px;
     height: 30px;
     font-family: LatoBold;
     font-size: 20px;
